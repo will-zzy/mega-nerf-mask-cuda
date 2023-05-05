@@ -24,10 +24,19 @@ this repo takes one whole image as input, while mega-nerf dose in batches. So th
 ```threshould``` : means overlapping areas ratio of various parts, dtype = float,<br>
 as input. And take ```mask``` as output(shape=[WxH , 1],dtype = torch.int32) <br>
 You can also use it in ```create_cluster_masks.py``` like in demo.py<br>
-There is almost no deviation:
+There is almost no deviation:<br>
+__mega-nerf__:
 <p align="center">
   <img src='./media/meganerf1.png'>
-</p>
+</p><br>
+__this repo__:
+<p align="center">
+  <img src='./media/mask1.png'>
+</p><br>
+raw rgb image:
+<p align="center">
+  <img src='./media/00539.jpg'>
+</p><br>
 
 
 

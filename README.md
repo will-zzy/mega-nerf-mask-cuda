@@ -7,6 +7,27 @@ Let space $V$ be evenly divided into $N_{grad}$ sub regions $G=\{g_1,g_2,...,g_{
 
 
 # Install
-git clone
+```
+git clone git@github.com:will-zzy/mega-nerf-mask-cuda.git
+cd mega-nerf-mask-cuda
+cd csrc
+python setup.py install
+```
+# Use
+this repo takes one whole image as input, while mega-nerf dose in batches. So thie repo just uses 1~2 hours to mask all images, while mega-nerf takes 8~11 hours on one A5000;<br>
+```maskStudio.mega_nerf_mask``` need<br>
+```dirsMap``` : means rays_d, shape = [W*H , 3],<br>
+```localMap``` : means rays_o, shape = [W*H , 3],<br>
+```centroids``` : means centroid of each grid, shape = [clusters , 3],<br>
+```t_range``` : means t_min and t_max, shape = [W*H , 2],<br>
+```samples``` : means num of sample points in one ray, dtype = int,<br>
+```threshould``` : means overlapping areas ratio of various parts, dtype = float,<br>
+as input. And take ```mask``` as output(shape=[WxH , 1],dtype = torch.int32) <br>
+You can also use it in ```create_cluster_masks.py``` like in demo.py<br>
+There is almost no deviation:
+<p align="center">
+  <img src='media/mega-nerf.png'>
+</p>
+
 
 

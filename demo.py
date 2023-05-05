@@ -7,7 +7,6 @@ from argparse import Namespace
 from pathlib import Path
 from zipfile import ZipFile
 import sys
-sys.path.insert(0,'/home/zzy/lib/mega-nerf')
 import numpy as np
 import torch,gc
 import torch.distributed as dist
@@ -16,7 +15,7 @@ from torch.distributed.elastic.multiprocessing.errors import record
 from mega_nerf.misc_utils import main_tqdm, main_print
 from mega_nerf.opts import get_opts_base
 from mega_nerf.ray_utils import get_ray_directions, get_rays
-import studio
+import maskStudio
 import cv2 as cv
 gc.collect()
 torch.cuda.empty_cache()
@@ -203,7 +202,7 @@ def main(hparams: Namespace) -> None:
             locMap = rays[0,:3].to("cuda")
             dirsMap = rays[:,3:6].to("cuda")
             t_range = rays[:,6:8].to("cuda")
-            mask = studio.mega_nerf_mask(dirsMap,locMap,centroids,t_range,hparams.ray_samples,hparams.boundary_margin)
+            mask = maskStudio.mega_nerf_mask(dirsMap,locMap,centroids,t_range,hparams.ray_samples,hparams.boundary_margin)
             
             mask = mask.view(metadata['H'], metadata['W'], centroids.shape[0]).to("cpu")
             for j in range(centroids.shape[0]):

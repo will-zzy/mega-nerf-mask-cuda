@@ -14,7 +14,7 @@ cd csrc
 python setup.py install
 ```
 # Use
-this repo takes one whole image as input, while mega-nerf dose in batches. So thie repo just uses 1~2 hours to mask all images, while mega-nerf takes 8~11 hours on one A5000;<br>
+this repo takes one whole image as input, while mega-nerf dose in batches. So thie repo just uses 1-2 hours to mask all images, while mega-nerf takes 8-11 hours on one A5000(In fact, most of the time is spent reading metadata);<br>
 ```maskStudio.mega_nerf_mask``` need<br>
 ```dirsMap``` : means rays_d, shape = [W*H , 3],<br>
 ```localMap``` : means rays_o, shape = [W*H , 3],<br>
@@ -35,7 +35,7 @@ __this repo__:
 </p><br>
 raw rgb image:
 <p align="center">
-  <img src='./media/00539.jpg'>
+  <img src='./media/000539.jpg'>
 </p><br>
 
 

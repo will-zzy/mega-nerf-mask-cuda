@@ -26,7 +26,7 @@ as input. And take ```mask``` as output(shape=[WxH , 1],dtype = torch.int32) <br
 You can also use it in ```create_cluster_masks.py``` like in demo.py<br>
 There is almost no deviation:
 <p align="center">
-  <img src='media/mega-nerf.png'>
+  <img src='./media/meganerf1.png'>
 </p>
 
 
